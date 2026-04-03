@@ -1,12 +1,20 @@
-const isLogin = true
+const article = 2 // 0 1 3
+
+
+function getRritcleTem() {
+  if (article === 0) {
+    return <div>文章类型0</div>
+  } else if (article === 1) {
+    return <div>文章类型1</div>
+  } else if (article === 2) {
+    return <div>文章类型2</div>
+  }
+}
 
 function App() {
   return (
     <div className="App">
-      {/**逻辑与 &&  */}
-      {isLogin && <span>登陆了么</span>}
-      {/** 三元运算 */}
-      {isLogin ? <span>jack</span> : <span>loading...</span>}
+      {getRritcleTem()}
     </div>
   )
 }
