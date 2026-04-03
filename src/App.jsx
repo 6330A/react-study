@@ -1,49 +1,24 @@
 
-// function App() {
+// 传统定义
+function Button1() {
+  return <button>click me button1!</button>
+}
 
-//   const handleClick = () => {
-//     console.log("hello click")
-//   }
-
-//   return (
-//     <div className="App">
-//       <button onClick={handleClick}>click me</button>
-//     </div>
-//   )
-// }
-
-// export default App
-
-
-
-// function App() {
-
-//   // 事件参数e
-//   const handleClick = (e) => {
-//     console.log("hello click", e)
-//   }
-
-//   return (
-//     <div className="App">
-//       <button onClick={handleClick}>click me</button>
-//     </div>
-//   )
-// }
-
-// export default App
-
-
+// 箭头函数
+const Button2 = () => {
+  return <button>click me button2!</button>
+}
 
 function App() {
 
-  // 事件参数e + 自定义参数
-  const handleClick = (e, name) => {
-    console.log("hello click", name, e)
-  }
-
   return (
     <div className="App">
-      <button onClick={(e) => handleClick(e, 'jack')}>click me</button>
+      {/**2.使用组件（渲染组件） */}
+      {/**自闭和 */}
+      <Button1 />
+      {/**成对标签 */}
+      <Button2></Button2>
+
     </div>
   )
 }
