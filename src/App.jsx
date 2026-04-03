@@ -1,23 +1,21 @@
 const count = 100
 
-function getName(){
-  return 'Jack'
-}
+const list = [
+  { id: 100, name: 'Vue' },
+  { id: 101, name: 'React' },
+  { id: 102, name: 'Angular' },
+]
 
 function App() {
   return (
     <div className="App">
-      你好啊🤔!!
-      {/**使用引号传递字符串 */}
-      {'this is 引号传递的字符串'}
-      {/**识别变量 */}
-      {count}
-      {/**函数调用 */}
-      {getName()}
-      {/**方法调用 */}
-      {new Date().getDate()}
-      {/**使用js对象 */}
-      <div style={{color: 'red'}}> 一个div </div>
+      {/**渲染列表 */}
+      {/**map循环哪个结构 return结构 */ */}
+      <ul>
+        {/* {list.map(item => <li>hello!</li>)} */}
+        {/**注意绑定key */}
+        {list.map(item => <li key={item.id}>{item.name}</li>)}
+      </ul>
     </div>
   )
 }
