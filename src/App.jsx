@@ -1,20 +1,49 @@
-const article = 2 // 0 1 3
+
+// function App() {
+
+//   const handleClick = () => {
+//     console.log("hello click")
+//   }
+
+//   return (
+//     <div className="App">
+//       <button onClick={handleClick}>click me</button>
+//     </div>
+//   )
+// }
+
+// export default App
 
 
-function getRritcleTem() {
-  if (article === 0) {
-    return <div>文章类型0</div>
-  } else if (article === 1) {
-    return <div>文章类型1</div>
-  } else if (article === 2) {
-    return <div>文章类型2</div>
-  }
-}
+
+// function App() {
+
+//   // 事件参数e
+//   const handleClick = (e) => {
+//     console.log("hello click", e)
+//   }
+
+//   return (
+//     <div className="App">
+//       <button onClick={handleClick}>click me</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
 
 function App() {
+
+  // 事件参数e + 自定义参数
+  const handleClick = (e, name) => {
+    console.log("hello click", name, e)
+  }
+
   return (
     <div className="App">
-      {getRritcleTem()}
+      <button onClick={(e) => handleClick(e, 'jack')}>click me</button>
     </div>
   )
 }
