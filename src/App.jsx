@@ -6,16 +6,18 @@ import { useState } from 'react'
 function App() {
 
   // 1.调用useState添加状态变量
-  const [count, setMyCount] = useState(0)
+  const [form, setForm] = useState({
+    name: "jack"
+  })
 
   // 2.点击事件回调
   const handleClick = () => {
-    setMyCount(count + 1)
+    setForm({ ...form, name: "mike" })
   }
 
   return (
     <div className="App">
-      <button onClick={handleClick}>{count}</button>
+      <button onClick={handleClick}>{form.name}</button>
     </div>
   )
 }
