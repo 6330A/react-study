@@ -1,23 +1,14 @@
 
-// useState实现计数器按钮
-import { useState } from 'react'
-
+import './index.css';
 
 function App() {
 
-  // 1.调用useState添加状态变量
-  const [form, setForm] = useState({
-    name: "jack"
-  })
-
-  // 2.点击事件回调
-  const handleClick = () => {
-    setForm({ ...form, name: "mike" })
-  }
-
   return (
     <div className="App">
-      <button onClick={handleClick}>{form.name}</button>
+      {/* 行内样式 */}
+      <span style={{ color: 'blue' , fontSize: '40px'}}>hello</span>
+      {/* class类名控制 */}
+      <span className="foo">world</span>
     </div>
   )
 }
