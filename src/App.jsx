@@ -2,13 +2,16 @@ import { useRef, useState } from 'react'
 
 function App() {
 
-  const [val, setValue] = useState('')
-
-  // 通过val属性绑定react状态
-  // 绑定onChange事件，通过事件参数e拿到输入框最新的值，反向修改到react状态
+  // 1. useRef 生成ref对象， 绑定到dom标签上
+  // 2. 通过ref对象.current获取dom元素
+  const inputRef = useRef(null)
+  const showDom = () => {
+    console.dir(inputRef.current)
+  }
   return (
     <div>
-      <input value={val} onChange={(e) => setValue(e.target.value)} type='text'></input>
+      <input type="text" ref={inputRef}></input>
+      <button onClick={showDom}>click me</button>
     </div>
   )
 }
