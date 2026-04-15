@@ -1,22 +1,23 @@
 import { useState } from 'react'
 
 function Son(props){
-  // 3. 子组件通过props接收父组件传递的属性，并使用
-  return <div>son, {props.children}</div>
+
+  const sonMsg = 'son msg'
+  return <button onClick={() => props.getMsg(sonMsg)}>click</button>
 }
 
 function App() {
 
-  // 1.父组件App定义属性，传递给子组件Son
-  const appName = 'App Name'
+  const [msg, setMsg] = useState('')
+  const getMsg = (msg) => {
+    console.log(msg)
+    setMsg(msg)
+  }
 
   return (
     <div>
-      {/* 2. 特殊的props，children，此时son标签成对出现 */}
-      <Son>
-        <span>这是子组件的children</span>
-      </Son>
-
+      <p>app:{msg}</p>
+      <Son getMsg={getMsg}/>
     </div>
   )
 }
