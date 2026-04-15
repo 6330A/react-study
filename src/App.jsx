@@ -1,23 +1,38 @@
 import { useState } from 'react'
 
-function Son(props){
+function A({getAName}) {
 
-  const sonMsg = 'son msg'
-  return <button onClick={() => props.getMsg(sonMsg)}>click</button>
+  return (
+    <div>
+      <p>组件A</p>
+      <button onClick={() => getAName('组件A张三')}>获取组件A的名字</button>
+    </div>
+  )
+}
+
+function B({name}) {
+
+  return (
+    <div>
+      <p>组件B</p>
+      <p>组件A的名字是：{name}</p>
+    </div>
+  )
 }
 
 function App() {
 
-  const [msg, setMsg] = useState('')
-  const getMsg = (msg) => {
-    console.log(msg)
-    setMsg(msg)
+  const [name, setName] = useState('')
+
+  const getAName = (name) => {
+    console.log(name)
+    setName(name)
   }
 
   return (
     <div>
-      <p>app:{msg}</p>
-      <Son getMsg={getMsg}/>
+      <A getAName={getAName}/>
+      <B name={name} />
     </div>
   )
 }
