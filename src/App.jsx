@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 function Son(props){
   // 3. 子组件通过props接收父组件传递的属性，并使用
-  return <div>son, {props.appName}, {props.age}, {props.child}</div>
+  return <div>son, {props.children}</div>
 }
 
 function App() {
@@ -12,16 +12,11 @@ function App() {
 
   return (
     <div>
-      {/* 2. 子组件接收父组件传递的属性 */}
-      <Son 
-      appName={appName}
-      age={20}
-      isTrue={false}
-      list={['Vue', 'React']}
-      obj = {{name: 'jack'}}
-      cb={() => console.log('hello!')}
-      child={<div>child</div>}
-      />
+      {/* 2. 特殊的props，children，此时son标签成对出现 */}
+      <Son>
+        <span>这是子组件的children</span>
+      </Son>
+
     </div>
   )
 }
